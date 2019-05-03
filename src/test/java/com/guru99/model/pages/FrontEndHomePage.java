@@ -22,6 +22,10 @@ public class FrontEndHomePage extends LoginPage {
 	{
 		driver.findElement(By.xpath("//ul[@class='toggle-tabs']/li[2]")).click();
 	}
+	public String getReview()
+	{
+		return driver.findElement(By.xpath("//*[@id=\"customer-reviews\"]/dl/dd[1]")).getText();
+	}
 	
 
 }

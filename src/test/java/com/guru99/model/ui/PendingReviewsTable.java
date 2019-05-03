@@ -23,9 +23,14 @@ public class PendingReviewsTable {
 			System.out.println(columns.size());
 			for (int j = 0; j < columns.size(); j++) {
 				WebElement item = columns.get(j);
-				WebElement editlink = element.findElement(By.xpath("//*[@id='reviwGrid_table']/tbody/tr[1]/td[10]/a"));
+				String text = item.getText();
+				System.out.println("Text is" + text);
+				WebElement editlink = element.findElement(By.cssSelector("#reviwGrid_table > tbody > tr:nth-child(1) > td.last > a"));
+				String etext = editlink.getText();
+				System.out.println("eText is" + etext);
 				if (item.equals(editlink)) {
 					item.click();
+					
 				}
 
 			}

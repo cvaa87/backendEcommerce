@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import com.guru99.model.ui.SalesInvoicesTable;
+
 public class AdminPanelBasePage extends LoginPage {
+	
+	
 
 	public AdminPanelBasePage(WebDriver driver) {
 		super(driver);
@@ -21,6 +25,11 @@ public class AdminPanelBasePage extends LoginPage {
 	{
 		driver.findElement(By.xpath("//ul[@id='nav']/li[1]/ul/li/a/span")).click();
 	}
+	public void selectInvoicesFromSalesMenu()
+	{
+		driver.findElement(By.xpath("//*[@id=\"nav\"]/li[1]/ul/li[2]/a/span")).click();
+		
+	}
 	public void selectPendingReviews()
 	{
 		Actions a = new Actions(driver);
@@ -30,5 +39,6 @@ public class AdminPanelBasePage extends LoginPage {
 		driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/ul/li/ul/li[1]/ul/li[1]/a/span")).click();
 	
 	}
+	
 
 }

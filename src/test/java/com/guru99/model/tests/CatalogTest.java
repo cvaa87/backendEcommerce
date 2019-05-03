@@ -10,6 +10,8 @@ import com.guru99.model.pages.LoginPage;
 import com.guru99.model.pages.PendingReviewsPage;
 import com.guru99.model.pages.SubmitReviewPage;
 
+import junit.framework.Assert;
+
 public class CatalogTest extends BaseTest {
 	
 	
@@ -28,7 +30,7 @@ public class CatalogTest extends BaseTest {
 		AdminPanelBasePage aPBP = new AdminPanelBasePage(driver);
 		aPBP.selectPendingReviews();
 		PendingReviewsPage pRP = new PendingReviewsPage(driver);
-		pRP.selectEditLink();
+		pRP.clickEditLink();
 		EditReviewPage eDP = new EditReviewPage(driver);
 		eDP.selectStatusofReview("1");
 		eDP.clickSaveReviewButton();
@@ -37,6 +39,9 @@ public class CatalogTest extends BaseTest {
 		fEHP.clickMobileLink();
 		fEHP.selectImageOfSonyXperia();
 		fEHP.selectReviewsTab();
+		String review = fEHP.getReview();
+		System.out.println("Review is" +review);
+		Assert.assertEquals("Siva's review-Test REVIEW BY TTTTTEEEEEEE / (POSTED ON 5/2/2019)", review);
 		
 	}
 
